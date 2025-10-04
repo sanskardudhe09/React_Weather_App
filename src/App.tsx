@@ -34,7 +34,6 @@ const App:React.FC = () => {
   const fetchWeather = useCallback(async (cityName: string) => {
     try {
       setLoading(true);
-      console.log(API_KEY);
       setError(null);
       let response;
       response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`);
