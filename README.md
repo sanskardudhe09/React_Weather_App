@@ -64,3 +64,7 @@ npm install
 ```bash
  npm start
 ```
+5. **SCREENSHOTS**
+<img width="1832" height="970" alt="Screenshot from 2025-10-04 18-39-31" src="https://github.com/user-attachments/assets/d20bd27b-3fcd-4664-9487-cc896e858aa5" />
+
+
