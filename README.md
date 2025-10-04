@@ -49,5 +49,12 @@ The goal of this project is to create a responsive and user-friendly weather app
 git clone https://github.com/your-username/weather-app.git
 cd weather-app
 ```
+2. **Install Dependencies**
+```bash
+npm install
+```
 
-2. 
+3. **WEATHER API KEY SETUP**
+```bash
+
+cd weather-app
