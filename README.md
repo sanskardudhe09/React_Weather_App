@@ -56,5 +56,11 @@ npm install
 
 3. **WEATHER API KEY SETUP**
 ```bash
+ Create .env file in the root directory and add your OpenWeatherMap API key
+ REACT_APP_API_KEY=your_api_key_here
+```
 
-cd weather-app
+4. **RUN THE APP**
+```bash
+ npm start
+```
