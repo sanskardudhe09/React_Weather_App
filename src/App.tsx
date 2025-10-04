@@ -4,7 +4,8 @@ import SearchBar from './components/SearchBar';
 import WeatherDisplay from './components/WeatherDisplay';
 import ForecastDisplay from './components/ForecastDisplay';
 import { WeatherData, ForecastData } from './interface/weatherInterface';
-import { API_KEY } from './api/apiKey';
+
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const MainContainer = styled.div`
   min-height: 100vh;
