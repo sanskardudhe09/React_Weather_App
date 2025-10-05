@@ -78,7 +78,9 @@ The API key is **not hardcoded** and must be stored in a `.env` file as:
 
 ### **Default Units and Location**
 - The temperature is displayed in **Celsius** by default.  
-- If location access or input fails, a fallback city (e.g., **Pune**) may be used for demonstration purposes.
+- On **first-time visits** or if **localStorage is cleared**, the app attempts to auto-fetch the user’s current location using the **browser’s Geolocation API**.
+- If geolocation is unavailable, denied, or fails, the app falls back to a **default city 'Pune'** for demonstration purposes.
+- For returning users, the last searched city stored in localStorage is automatically displayed.
 
 ### **Error Handling**
 - The app gracefully handles invalid city names, empty input, or failed API requests.  
