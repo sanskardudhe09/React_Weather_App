@@ -53,7 +53,40 @@ const App:React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if(city) fetchWeather(city);
+    /*user has visited the weather application for the first time
+    or in case user has cleared localStorage*/
+    if(!city){
+      if(navigator.geolocation){
+        setLoading(true);
+        navigator.geolocation.getCurrentPosition(
+          async (position) => {
+            const { latitude, longitude } = position.coords;
+            try {
+              const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`)
+              const data = await response.json();
+              if(response.ok && data.name){
+                fetchWeather(data.name) //fetch weather of current location
+              }else{
+                setError('Unable to fetch current location weather.');
+              }
+            } catch (error: any) {
+              setError('Failed to fetch weather for your location.'); 
+            } finally {
+              setLoading(false);
+            }
+          }, 
+          () => {
+            // fallbacks to default City if error occurred in getting current position from geolocation API
+            fetchWeather('Pune');
+          }
+        );
+      }else{
+        //fallbacks to default City if geolocation is not available
+        fetchWeather('Pune');
+      }
+    }else{
+      fetchWeather(city);
+    }
   }, [city, fetchWeather]);
 
   return (
