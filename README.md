@@ -73,7 +73,7 @@ npm install
 
 ### **Environment Variables**
 The API key is **not hardcoded** and must be stored in a `.env` file as:
-REACT_APP_API_KEY=your_api_key_here
+```REACT_APP_API_KEY=your_api_key_here```
 - This file is excluded from version control using `.gitignore` to prevent exposing sensitive information.
 
 ### **Default Units and Location**
