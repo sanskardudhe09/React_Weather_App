@@ -39,7 +39,7 @@ const App:React.FC = () => {
       response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`);
       const weatherRes = await response.json();
       if(!response.ok) throw new Error(weatherRes.message || 'City Not Found');
-      if (/^[0-9]+$/.test(weatherRes.name)) {
+      if (!/^[a-zA-Z\s]+$/.test(weatherRes.name)) {
         throw new Error("Invalid city name.");
       }
       response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}&units=metric`);
