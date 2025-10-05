@@ -91,7 +91,7 @@ The API key is **not hardcoded** and must be stored in a `.env` file as:
 
 ### **Minimal Dependencies**
 - The project uses **minimal external libraries** to keep the bundle size small and the setup lightweight.  
-- Core stack: **React.js**, **TypeScript** (if applicable), and **CSS Modules / Styled Components**.
+- Core stack: **React.js**, **TypeScript** (if applicable), and **Styled Components**.
 
 ### **Code Organization**
 - The project follows a **modular folder structure** under the `src/` directory to ensure clean separation of concerns and maintainability.
